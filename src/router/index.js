@@ -6,6 +6,8 @@ import Home2 from "../components/home/home2"
 import Wandering from "../components/wandering"
 import ShoppingCart from "../components/ShoppingCart"
 import AccountCenter from "../components/AccountCenter"
+import Register from '../components/AccountCenter/Register'
+import Login from '../components/AccountCenter/Login'
 import Allproducts from "../components/AllProducts"
 import BathShower from "../components/home/BathShower"
 import Bedding from "../components/home/bedding"
@@ -41,6 +43,8 @@ const router = <Provider store = {Store}>
        <Route path="/shoppingcart" component={ShoppingCart}/>
        <Route path="/accountcenter" component={AccountCenter}/>
        <Route path="/allproducts" component={Allproducts}/>
+       <Route path='/register' component={Register} />
+       <Route path='/login' component={Login} />
        <Redirect from="/" to="/home"/>      
        </Switch>
     </App>
