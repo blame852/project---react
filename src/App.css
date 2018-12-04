@@ -12,6 +12,23 @@ html,body{
   user-select: none;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
+.l{
+	float: left;
+}
+.r{
+	float: right;
+}
+.clear:after{
+	height: 0;
+	line-height: 0;
+	display: block;
+	visibility: hidden;
+	content: "";
+	clear: both;
+}
+a {
+	text-decoration: none;
+}
 html{
 	font-size:26.66666667vw;
 }
