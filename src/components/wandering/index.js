@@ -1,4 +1,5 @@
 import React ,{ Component } from "react";
+import "./index.module.scss";
 import css from "./index.module.scss";
 import axios from "axios";
 
