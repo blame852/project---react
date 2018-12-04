@@ -1,9 +1,10 @@
 import React ,{ Component } from "react"
-import index from './index.module.scss'
+import css from './index.module.scss'
+import './index.module.scss'
 class home extends Component{
 	render(){
 		return <div>
-          首页<div className={aaa}></div>
+          首页<div className={css.aaa}></div>
 		</div>
 	}
 }
