@@ -1,3 +1,13 @@
-.aaa{
-	width:100%;
+.header{
+	height: .4rem;
+	background-color: #4eb302;
+	display: flex;
+	justify-content: space-between;
+	color: #fff;
+	line-height: .4rem;
+	padding: 0 10px;
+	font-size: 14px;
+	span{
+		font-size: 18px;
+	}
 }
