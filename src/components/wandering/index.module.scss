@@ -8,12 +8,18 @@
 		font-weight: 100;
 		background:#89be48;
 		color:#fff;
+		position: fixed;
+		z-index:50;
 	}
 	ul{
 		width:100%;
 		background:#fff;
 		margin:0;
 		padding:0;
+		position: relative;
+		padding-top:0.48rem;
+		padding-bottom:0.48rem;
+		overflow: hidden;
 		li{
 			width:46%;
 			float:left;
@@ -31,13 +37,18 @@
 			}
 			.price{
 				color:#ff475d;
-				font-size:0.22rem;
-				height:0.22rem;
+				font-size:0.2rem;
+				height:0.2rem;
+				.money{
+					color:#ff475d;
+					font-size:0.2rem;
+					height:0.2rem;
+				}
 			}
 			.sale{
-				height:0.22rem;
-				font-size:0.18rem;
-				line-height:0.22rem;
+				height:0.2rem;
+				font-size:0.16rem;
+				line-height:0.2rem;
 				float:right;
 				color:#999;
 			}
