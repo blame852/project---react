@@ -36,7 +36,7 @@ const router = <Provider store = {Store}>
                   </Switch>
           </Home>
        }/>
-       <Route path="/detail" component={Detail} />
+       <Route path="/detail/:id" component={Detail} />
        <Route path="/wandering" component={Wandering}/>
        <Route path="/shoppingcart" component={ShoppingCart}/>
        <Route path="/accountcenter" component={AccountCenter}/>
