@@ -15,7 +15,10 @@ import HouseWork from "../components/home/Housework"
 import Kitchen from "../components/home/Kitchen"
 import Life from "../components/home/life"
 import NewProducts from "../components/home/NewProducts"
-const router = <Router>
+import { Provider } from 'react-redux'
+import Store from '../store/index'
+const router = <Provider store = {Store}>
+<Router>
     <App>
        <Switch>
        <Route path="/home" render={()=>
@@ -41,5 +44,7 @@ const router = <Router>
        <Redirect from="/" to="/home"/>      
        </Switch>
     </App>
-	</Router>
-  export default router;
+</Router>
+
+</Provider>
+export default router;
