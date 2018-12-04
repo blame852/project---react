@@ -1,0 +1,46 @@
+.wandering{
+	h2{
+		height:0.48rem;
+		width:100%;
+		font-size:0.2rem;
+		line-height:0.48rem;
+		text-align:center;
+		font-weight: 100;
+		background:#89be48;
+		color:#fff;
+	}
+	ul{
+		width:100%;
+		background:#fff;
+		margin:0;
+		padding:0;
+		li{
+			width:46%;
+			float:left;
+			margin:2%;
+			img{
+				width:1.7rem;
+				border-radius:0.08rem;
+			}
+			h4{
+				font-size:0.14rem;
+				padding:0.04rem 0.02rem;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow:ellipsis;
+			}
+			.price{
+				color:#ff475d;
+				font-size:0.22rem;
+				height:0.22rem;
+			}
+			.sale{
+				height:0.22rem;
+				font-size:0.18rem;
+				line-height:0.22rem;
+				float:right;
+				color:#999;
+			}
+		}
+	}
+}
