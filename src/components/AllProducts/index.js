@@ -9,7 +9,7 @@ class AllProducts extends Component{
           	  isShow:false,
           	  datalist:[]
           }
-    }
+    } 
 	render(){
 		return <div>
             <div className={css.div}>
@@ -66,7 +66,6 @@ class AllProducts extends Component{
          	 this.setState({
          	 	 datalist:res.data.InnerData
          	 })
-         	 console.log(this.state.datalist)
          })
          	
 	}

@@ -1,0 +1,160 @@
+.AccountCenter{
+	background:#eee;
+	padding-bottom:0.4rem;
+	h2{
+		height:0.48rem;
+		width:100%;
+		font-size:0.2rem;
+		line-height:0.48rem;
+		text-align:center;
+		font-weight: 100;
+		background:#89be48;
+		color:#fff;
+		padding-left:0.42rem;
+		position: fixed;
+		z-index: 50;
+		.setting{
+			float:right;
+			margin-right:0.5rem;
+			font-size:0.16rem;
+		}
+	}
+	.topLogin{
+		position:relative;
+		padding-top:0.48rem;
+		width:100%;
+		height:1.08rem;
+		background:url(http://i1.lifevccdn.com/images/h5/core/background.png) no-repeat;
+		.acctLogin{
+			width:100%;
+			padding-top:0.06rem;
+			position:relative;
+			.noLogin{
+				text-align:center;
+				font-size:0.16rem;
+				height:0.36rem;
+				line-height:0.36rem;
+				display: block;
+			}
+			.button{
+				display:inline-block;
+				color:#009c42;
+				padding:0 0.1rem;
+				height:0.36rem;
+				width:1.2rem;
+				line-height: 0.36rem;
+				background:hsla(0,0%,100%,0.4);
+				border-radius:0.18rem;
+				border:0.01rem solid #009c42;
+				position: absolute;
+				left:50%;
+				transform: translateX(-50%);
+				margin-top:0.06rem;
+				text-align:center;
+				.register{
+					font-size:0.16rem;
+					display:inline-block;
+					padding:0 0.1rem;
+				}
+				.login{
+					font-size:0.16rem;
+					display:inline-block;
+					padding:0 0.1rem;
+				}
+			}
+		}
+	}
+	.dashOrder{
+		width:100%;
+		background:#fff;
+		border-top:0.01rem solid #eee;
+		margin:0 auto;
+		.topDash{
+			width:100%;
+			height:0.6rem;
+			display: flex;
+			li{
+				display: inline-block;
+				flex:1;
+				height:0.3rem;
+				border-right:1px solid #dedede;
+				margin-top:0.18rem;
+				text-align: center;
+				a{
+					display: block;
+					text-align: center;
+					color:#585858;
+					padding:0;
+					height:0.43rem;
+					border-bottom:0.01rem solid #eee;
+					i{
+						display: inline-block;
+						position:relative;
+						height:0.43rem;
+						width:0.42rem;
+						font-size:0.3rem;
+					}
+					.word{
+						display:inline-block;
+						font-size:0.14rem;
+						height:0.43rem;
+						line-height: 0.43rem;
+						position: relative;
+						top:-0.05rem;
+						left:0.05rem;
+					}
+				}
+
+			}
+			li:nth-of-type(3){
+				border:0;
+			}
+		}
+	}
+	.order{
+		ul{
+			margin-bottom:0.16rem;
+			padding:0;
+			width:100;
+			overflow: hidden;
+			li{
+				width:100;
+				height:0.6rem;
+				background:#fff;
+				border-top:0.01rem solid #eee;
+				border-bottom:0.01rem solid #eee;
+				a{
+					width:100;
+					height:0.6rem;
+					display: block;
+					color:#333;
+					img{
+						width:0.3rem;
+						float:left;
+						margin:0.15rem 0.05rem 0;
+						height:0.3rem;
+					}
+					.title{
+						display: inline-block;
+						height:0.6rem;
+						line-height: 0.6rem;
+						font-size:0.14rem;
+						float:left;
+						color:#585858;
+						margin-left:0.05rem;
+					}
+					.right{
+						display: inline-block;
+						width:0.1rem;
+						height:0.1rem;
+						float:right;
+						border-right:0.02rem solid #bbb;
+						border-top:0.02rem solid #bbb;
+						margin:0.25rem 0.1rem 0 0;
+						transform: rotate(45deg);
+					}
+				}
+			}
+		}
+	}
+}

@@ -2,12 +2,19 @@ import React , {Component} from "react"
 import {NavLink} from "react-router-dom" 
 import  "./index.module.scss"
 import css from "./index.module.scss"
+import { connect } from 'react-redux';
 class Footer extends Component{
     constructor(props){
           super(props)
-}
+
+    }
+
+	
+	
+
     render(){
-    	return <footer>
+    	return (
+		<footer className={this.props.isShow?null:css.footHidden}>
     	     <ul>
     	        <li>
                   <NavLink to="/home" replace activeClassName={css.active}>
@@ -40,7 +47,14 @@ class Footer extends Component{
     	          </NavLink>
     	          </li>
     	     </ul>
-    	</footer> 
+		</footer> 
+		)
     }
 }
-export default Footer
+export default connect(
+	(state)=>{
+		return {
+			isShow: state.footBar
+		}
+	}
+)(Footer)

@@ -1,0 +1,57 @@
+.wandering{
+	h2{
+		height:0.48rem;
+		width:100%;
+		font-size:0.2rem;
+		line-height:0.48rem;
+		text-align:center;
+		font-weight: 100;
+		background:#89be48;
+		color:#fff;
+		position: fixed;
+		z-index:50;
+	}
+	ul{
+		width:100%;
+		background:#fff;
+		margin:0;
+		padding:0;
+		position: relative;
+		padding-top:0.48rem;
+		padding-bottom:0.48rem;
+		overflow: hidden;
+		li{
+			width:46%;
+			float:left;
+			margin:2%;
+			img{
+				width:1.7rem;
+				border-radius:0.08rem;
+			}
+			h4{
+				font-size:0.14rem;
+				padding:0.04rem 0.02rem;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow:ellipsis;
+			}
+			.price{
+				color:#ff475d;
+				font-size:0.2rem;
+				height:0.2rem;
+				.money{
+					color:#ff475d;
+					font-size:0.2rem;
+					height:0.2rem;
+				}
+			}
+			.sale{
+				height:0.2rem;
+				font-size:0.16rem;
+				line-height:0.2rem;
+				float:right;
+				color:#999;
+			}
+		}
+	}
+}
