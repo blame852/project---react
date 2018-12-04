@@ -28,9 +28,9 @@ class wandering extends Component{
           <h2>闲逛</h2>
           <ul>
           	{
-          		this.state.datalist.map(item=>
+          		this.state.datalist.map((item,index)=>
           			item.ImageUrl?
-          			<li key={item.ItemInfoID} onClick={this.handleClick.bind(this,item.ItemInfoID)}>
+          			<li key={index} onClick={this.handleClick.bind(this,index)}>
           				<img src={`http://i.lifevccdn.com/${item.ImageUrl}`}/>
           				<h4>{item.Name}</h4>
           				<span className={css.price}>￥
