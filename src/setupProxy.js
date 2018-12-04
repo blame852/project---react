@@ -1,12 +1,12 @@
 const proxy = require('http-proxy-middleware');
 
 module.exports = function(app) {
-  app.use(proxy('/1.0/v_h5_5.1.2_33', { 
+  app.use(proxy('/1.0/v_h5_5.1.2_33/contents', { 
   	target: 'http://app.lifevc.com',
   	host:"app.lifevc.com",
   	changeOrigin:true 
   }));
-  app.use(proxy('/1.0', { 
+  app.use(proxy('/1.0/v_h5_5.1.2_33/Stroll', { 
   	target: 'http://newapi.lifevc.com',
   	host:"newapi.lifevc.com",
   	changeOrigin:true 
