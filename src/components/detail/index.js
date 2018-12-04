@@ -9,12 +9,12 @@ class home extends Component{
 		</div>
 	}
 
-	componentDidmount(){
+	componentWillMount(){
 		this.props.footBarHidden();
 	}
 
 	componentWillUnmount() {
-		this.porps.footBarShow();
+		this.props.footBarShow();
 	}
 }
 export default connect(null, 
