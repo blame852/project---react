@@ -1,9 +1,9 @@
 const footBar = (prevState=true, action={}) => {
     let { type, payload } = action;
     switch (type) {
-        case "navBarShow":
+        case "footBarShow":
         return payload;
-        case "navBarHidden":
+        case "footBarHidden":
         return payload;
         default :
         return prevState;
