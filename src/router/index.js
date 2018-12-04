@@ -10,6 +10,7 @@ import Allproducts from "../components/AllProducts"
 import BathShower from "../components/home/BathShower"
 import Bedding from "../components/home/bedding"
 import HomeClose from "../components/home/HomeClose"
+import Detail from "../components/detail"
 import HouseWork from "../components/home/Housework"
 import Kitchen from "../components/home/Kitchen"
 import Life from "../components/home/life"
@@ -32,6 +33,7 @@ const router = <Router>
                   </Switch>
           </Home>
        }/>
+       <Route path="/detail" component={Detail} />
        <Route path="/wandering" component={Wandering}/>
        <Route path="/shoppingcart" component={ShoppingCart}/>
        <Route path="/accountcenter" component={AccountCenter}/>
