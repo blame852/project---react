@@ -12,3 +12,9 @@ html,body{
   user-select: none;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
+html{
+	font-size:26.66666667vw;
+}
+body{
+	font-size:0.16rem;
+}
