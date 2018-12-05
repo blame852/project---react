@@ -5,12 +5,13 @@ import promiseMid from 'redux-promise';
 import detailList from './storeList/detailList';
 import deliverGoods from './storeList/deliverGoods'
 import footBarWhatColor from './storeList/footBarWhatColor'
-
+import channelsub from './storeList/channelsub'
 const Reducer = combineReducers({
     footBar,
     detailList,
     deliverGoods,
-    footBarWhatColor
+    footBarWhatColor,
+    channelsub
 })
 
 let cmposeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

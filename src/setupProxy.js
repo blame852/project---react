@@ -43,10 +43,19 @@ app.use(proxy('/upload', {
 	host: "i.lifevccdn.com",
 	changeOrigin: true
 }));
+
 app.use(proxy('/api',{
 	target:'localhost:10.2.157.89:8080',
 	host: '10.2.157.89:8080',
 	changeOrigin:true
 }))
+
+app.use(proxy('/1.0/v_h5_5.1.2_33/Categories', { 
+  target: 'http://app.lifevc.com',
+  host:"app.lifevc.com",
+  changeOrigin:true 
+}));
+
+
 };
 // http://newapi.lifevc.com/1.0/v_h5_5.1.2_33/Stroll/StrollItemList?pageNo=1&o=http%3A%2F%2Fm.lifevc.com&NewCartVersion=true
