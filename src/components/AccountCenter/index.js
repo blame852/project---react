@@ -1,6 +1,5 @@
 import React ,{ Component } from "react";
 import css from "./index.module.scss";
-import "./index.module.scss";
 import {NavLink} from "react-router-dom";
 import axios from "axios";
 
@@ -33,9 +32,9 @@ class AccountCenter extends Component{
 				<div className={css.acctLogin}>
 					<span className={css.noLogin}>您还未登录</span>
 					<div className={css.button}>
-						<span className={css.login}>登录</span>
-						<span className={css.line}>|</span>
-						<span className={css.register}>注册</span>
+						<NavLink to="/login" className={css.login}>登录</NavLink>
+						<span className={css.line}>|</span>	
+						<NavLink to="/register" className={css.register}>注册</NavLink>
 					</div>
 				</div>
 			</div>
