@@ -40,7 +40,7 @@ class Footer extends Component{
     	          </NavLink>
     	          </li>
     	          <li>
-                  <NavLink to="/accountcenter" replace active className={this.props.footBarWhatColor === 'accountcenter' ? css.active : ''}>
+                  <NavLink to="/accountcenter" replace className={this.props.footBarWhatColor === 'accountcenter' ? css.active : ''}>
     	          <i className="iconfont icon-account"></i>
     	           账户中心
     	          </NavLink>
