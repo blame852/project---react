@@ -4,11 +4,13 @@ import thunkMid from 'redux-thunk';
 import promiseMid from 'redux-promise';
 import detailList from './storeList/detailList';
 import deliverGoods from './storeList/deliverGoods'
+import footBarWhatColor from './storeList/footBarWhatColor'
 
 const Reducer = combineReducers({
     footBar,
     detailList,
-    deliverGoods
+    deliverGoods,
+    footBarWhatColor
 })
 
 let cmposeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

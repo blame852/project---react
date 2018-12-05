@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 // import './index.css';
 // import App from './App';
 import router from "./router" ;
+import 'antd/dist/antd.css';
+
+import 'antd-mobile/dist/antd-mobile.css';
 // import * as serviceWorker from './serviceWorker';
 ReactDOM.render(router, document.getElementById('root'));
 

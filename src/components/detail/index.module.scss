@@ -11,3 +11,34 @@
 		font-size: 18px;
 	}
 }
+.titleName{
+	margin-top: 25px;
+	font-size: 18px;
+	text-align: center;
+}
+.titleMse{
+	margin-top: 10px;
+	color: #888;
+	font-size: 14px;
+	text-align: center;
+}
+.pir{
+	margin-top: 10px;
+	font-size: .22rem;
+	text-align: center;
+}
+.pir:after{
+	content: "折";
+	display: inline-block;
+	line-height: 18px;
+	color: #fff;
+	font-size: 10px;
+	width: 16px;
+	height: 16px;
+	background-color: #ad0303;
+	transform:translate(.04rem,-.07rem); 
+
+}
+.titleMs{
+	padding: 0 10px;
+}

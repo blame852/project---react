@@ -16,11 +16,9 @@ class home extends Component{
 	componentDidMount(){
 		axios.get('/1.0/v_h5_5.1.2_33/contents/home_v2?o=http%3A%2F%2Fm.lifevc.com&NewCartVersion=true')
 		.then((res)=>{
-			console.log(res.data);
 			this.setState({
 				dataList:res.data.InnerData
 			},()=>{
-				console.log(this.state.dataList);
 				var swiper = new Swiper('.homeSwiper', {
 				    pagination: {
 				    	el: '.swiper-pagination',
@@ -54,7 +52,6 @@ class home extends Component{
 							default :
 							return
 						}
-						
 					})}
 				</div>
 				:null

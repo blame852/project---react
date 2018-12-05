@@ -4,6 +4,11 @@ import './index.module.scss'
 import { connect } from 'react-redux'
 import action from './action'
 import { Carousel, WingBlank } from 'antd-mobile';
+import { Radio } from 'antd';
+
+const RadioButton = Radio.Button;
+const RadioGroup = Radio.Group;
+
 class home extends Component{
 
 	constructor(props) {
@@ -15,21 +20,26 @@ class home extends Component{
 
 	render(){
 		return <div>
+		{this.props.list.data?
+		<div>
 			<div className={css.header}>
-				<a herf="#">返回</a>
+				<a herf="#" onClick={this.GoBack.bind(this)}>返回</a>
 				<span>商品介绍</span>
 				<a herf="#">分享</a>
 			</div>
-			{this.props.list.data?
 				<WingBlank>
 					<Carousel
 						autoplay={true}
+						dots
+						autoplayInterval={500}
 						infinite
-						beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
-						afterChange={index => console.log('slide to', index)}
-						dots={true}
 					>
 						{this.props.list.data.InnerData.Headers.map((val,index) => (
+						<a
+						key={val}
+						href="javascript:;"
+						style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
+						>
 						<img	
 							src={val.ImageUrl}
 							alt=""
@@ -41,24 +51,51 @@ class home extends Component{
 							this.setState({ imgHeight: 'auto' });
 							}}
 						/>
+						</a>
 						))}
 					</Carousel>
 				</WingBlank>
-				:null
-			}
-				
-			
+			<p className={css.titleName}>{this.props.list.data.InnerData.Name}</p>
+			<p className={css.titleMse}>{this.props.list.data.InnerData.Caption}</p>
+			<p className={css.pir}>￥{this.props.list.data.InnerData.SalePrice}</p>
+			<div className={css.titleMs}>
+				<div>
+					{
+						this.props.list.data.InnerData.GroupAttrs.props.map(items=>
+							<RadioGroup key={items.pid} buttonStyle='solid' onChange={this.onChange.bind(this)} defaultValue={items[0]}>
+							<p style={{
+								'fontSize':'14px',
+								'color':'#444'
+							}}>{items.pname}</p>
+							{items.vals.map(i=>
+								<RadioButton key={i.vid} value={i.vname}>{i.vname}</RadioButton>
+							)}
+							</RadioGroup>
+						)
+					}
+				</div>
+			</div>
+		</div>
+		:null}
 		</div>
 	}
 
+	onChange(e) {
+  		console.log(`radio checked:${e.target.value}`);
+	}
+
 	componentDidMount(){
-		this.props.footBarHidden();
-		this.props.dataListAxios();
-		this.props.deliverGoods();
+		this.props.footBarHidden.apply(this);
+		this.props.dataListAxios.apply(this);
+		this.props.deliverGoods.apply(this);
 	}
 
 	componentWillUnmount() {
 		this.props.footBarShow();
+	}
+
+	GoBack(){
+		window.history.go(-1);
 	}
 }
 
