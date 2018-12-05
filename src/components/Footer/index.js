@@ -5,7 +5,7 @@ import css from "./index.module.scss"
 import { connect } from 'react-redux';
 class Footer extends Component{
     constructor(props){
-          super(props)
+          super(props);
 
     }
 
@@ -62,7 +62,7 @@ class Footer extends Component{
 }
 export default connect(
 	(state)=>{
-		console.log(state)
+
 		return {
 			isShow: state.footBar,
 			footBarWhatColor: state.footBarWhatColor

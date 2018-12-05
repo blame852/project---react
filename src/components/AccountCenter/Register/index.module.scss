@@ -42,7 +42,61 @@
 	}
 	.main{
 		width:100%;
-		height:100%;
-		background:url("http://i1.lifevccdn.com/images/m/account/login-big-bg.jpg");
+		height:5.47rem;
+		background:url('http://i1.lifevccdn.com/images/m/account/login-big-bg.jpg');
+		background-size:cover;
+		h2{
+			font-size:0.2rem;
+			color:#037049;
+			text-align:center;
+			padding-top:0.2rem;
+		}
+		ul{
+			li{
+				height:0.5rem;
+				width:90%;
+				margin:0 auto;
+				border-bottom:solid 1px #dbdbdb;
+				input{
+					width:100%;
+					height:0.2rem;
+					background: transparent;
+					outline:none;
+					border:none;
+					margin-top:0.12rem;
+					font-size:0.16rem;
+				}
+			}
+		}
+		.btn1{
+			display:block;
+			width:80%;
+			margin:0 auto;
+			background:#3aad36;
+			border:solid 1px #3aad36;
+			border-radius:0.05rem;
+			height:0.38rem;
+			color:white;
+			font-size:0.18rem;
+			text-align:center;
+			letter-spacing: 20px;
+			text-indent: 20px;
+			margin-bottom:0.2rem;
+		}
+		.btn2{
+			display:block;
+			width:80%;
+			margin:0 auto;
+			background:#8a8a8a;
+			border:solid 1px #8a8a8a;
+			border-radius:0.05rem;
+			height:0.38rem;
+			color:white;
+			font-size:0.18rem;
+			opacity:0.5;
+			text-align:center;
+			letter-spacing: 20px;
+			text-indent: 20px;
+		}
 	}
 }
