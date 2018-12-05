@@ -34,7 +34,7 @@ class Footer extends Component{
     	          </NavLink>
     	          </li>
     	          <li>
-                  <NavLink to="/shoppingcart" replace onClick={this.onClickNav.bind(this)} className={this.props.footBarWhatColor === 'ShoppingCart' ? css.active : ''}>
+                  <NavLink to="/shoppingcart" replace className={this.props.footBarWhatColor === 'ShoppingCart' ? css.active : ''}>
     	          <i className="iconfont icon-cart"></i>
     	           购物车
     	          </NavLink>
