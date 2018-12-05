@@ -2,6 +2,7 @@ import React ,{ Component } from "react";
 import css from "./index.module.scss";
 import {NavLink} from "react-router-dom";
 import axios from "axios";
+import {connect} from 'react-redux'
 
 class AccountCenter extends Component{
 	constructor(props){
@@ -9,6 +10,9 @@ class AccountCenter extends Component{
 		this.state={
 			datalist:[]
 		};
+	}
+	componentWillMount(){
+		this.props.whatFootBarColor();
 	}
 
 	componentDidMount(){
@@ -102,5 +106,13 @@ class AccountCenter extends Component{
 		</div>
 	}
 }
-export default AccountCenter
-
+export default connect(null,
+	{
+		whatFootBarColor(){
+			return{
+				type:'footBarColor',
+				payload:'accountcenter'
+			}
+		}
+	})(AccountCenter
+)
