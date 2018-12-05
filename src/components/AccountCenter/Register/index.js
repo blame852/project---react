@@ -17,14 +17,14 @@ class Register extends Component{
 						<h2>新用户注册</h2>
 						<ul>
 							<li>
-								<input type="text" placeholder="请输入手机号" />
+								<input type="text" placeholder="请输入手机号" ref="phone" />
 							</li>
 							<li>
-								<input type="password" placeholder="请设置6-20位密码,包含字母、数字或符号" />
+								<input type="password" placeholder="请设置6-20位密码,包含字母、数字或符号" ref="password" />
 							</li>
 						</ul>
-						<input type="button" value="注册" className={css.btn1} />
-						<input type="button" value="登录" className={css.btn2} />
+						<input type="button" value="注册" className={css.btn1} onClick={this.handleRegister.bind(this)}/>
+						<input type="button" value="登录" className={css.btn2} onClick={this.handleLog.bind(this)} />
 					</div>
 
 			   </div>
@@ -35,6 +35,19 @@ class Register extends Component{
 	}
 	componentWillUnmount(){
 		this.props.footBarShow();
+	}
+
+	handleRegister(){
+		console.log('register')
+		console.log(this.refs.phone.value)
+		console.log(this.refs.password.value)
+		axios.post('/api/register',{}).then(res=>{
+
+		})
+	}
+	handleLog(){
+		console.log(this.props.history)
+		this.props.history.push('/login');
 	}
 }
 

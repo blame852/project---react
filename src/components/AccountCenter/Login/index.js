@@ -24,7 +24,7 @@ class Login extends Component{
 					</div>
 					<div className={css.button}>
 						<NavLink to="/home" className={css.butLogin}>登录</NavLink>
-						<NavLink to="/home" className={css.butRegister}>注册</NavLink>
+						<NavLink to="/register" className={css.butRegister}>注册</NavLink>
 					</div>
 				</div>
 			</div>
