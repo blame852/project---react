@@ -2,6 +2,7 @@ import React ,{ Component } from "react"
 import  "./index.module.scss"
 import css from "./index.module.scss"
 import axios from "axios"
+import {connect} from "react-redux" 
 class AllProducts extends Component{
 	constructor(props){
           super(props)
@@ -34,7 +35,7 @@ class AllProducts extends Component{
                          <ul>
                          {
                          	item.Children.map(item1=>{
-                                      return <li key={item1.ItemIndexId}>
+                                      return <li key={item1.ItemIndexId} onClick={this.tiaozhuan.bind(this,item.ItemIndexId,item1.ItemIndexId)}>
                          		          <img src={"http://i.lifevccdn.com"+item1.Icon} alt="" />
                          		          <div>{item1.Name}</div>
                                      </li>  
@@ -54,11 +55,17 @@ class AllProducts extends Component{
           	   isShow:true
         })
 	}
+  tiaozhuan(id,id1){
+      this.props.history.push(`/channelsub/${id}/${id1}`)
+  }
 	del(){
 		this.setState({
 			  isShow:false
 		})
 	}
+  componentWillMount(){
+      this.props.foobar()
+  }
 	componentDidMount(){
          axios({
          	url:'/1.0/v_h5_5.1.2_33/categories/allCategory?o=http%3A%2F%2Fm.lifevc.com&NewCartVersion=true'
@@ -70,4 +77,11 @@ class AllProducts extends Component{
          	
 	}
 }
-export default AllProducts
+export default connect(null,{
+   foobar(){
+        return {
+            type:"footBarColor",
+            payload:"allproducts"
+        }
+   }
+})(AllProducts)
