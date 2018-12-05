@@ -19,6 +19,7 @@ import Life from "../components/home/life"
 import NewProducts from "../components/home/NewProducts"
 import { Provider } from 'react-redux'
 import Store from '../store/index'
+import Channelsub from "../components/channelsub"
 const router = <Provider store = {Store}>
 <Router>
     <App>
@@ -45,7 +46,8 @@ const router = <Provider store = {Store}>
        <Route path="/allproducts" component={Allproducts}/>
        <Route path='/register' component={Register} />
        <Route path='/login' component={Login} />
-       <Redirect from="/" to="/home"/>      
+       <Route path="/channelsub/:id/:id" component={Channelsub}/>   
+       <Redirect from="/" to="/home"/>   
        </Switch>
     </App>
 </Router>
