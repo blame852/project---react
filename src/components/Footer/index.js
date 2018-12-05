@@ -62,7 +62,7 @@ class Footer extends Component{
 }
 export default connect(
 	(state)=>{
-		console.log(state)
+
 		return {
 			isShow: state.footBar,
 			footBarWhatColor: state.footBarWhatColor

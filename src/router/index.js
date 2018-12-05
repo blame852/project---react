@@ -46,7 +46,7 @@ const router = <Provider store = {Store}>
        <Route path="/allproducts" component={Allproducts}/>
        <Route path='/register' component={Register} />
        <Route path='/login' component={Login} />
-       <Route path="/channelsub/:id/:id" component={Channelsub}/>   
+       <Route path="/channelsub/:id/:i" component={Channelsub}/>   
        <Redirect from="/" to="/home"/>   
        </Switch>
     </App>
