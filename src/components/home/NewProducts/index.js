@@ -1,4 +1,6 @@
-import React ,{ Component } from "react"
+import React ,{ Component } from "react";
+
+
 class NewProducts extends Component{
 	render(){
 		return <div>
