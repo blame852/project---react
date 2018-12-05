@@ -1,6 +1,7 @@
 import React ,{ Component } from "react";
 import css from "./index.module.scss";
 import axios from "axios";
+import { connect } from 'react-redux';
 import { PullToRefresh, Button } from 'antd-mobile'
 import InfiniteScroll from 'react-infinite-scroller'
 
@@ -15,6 +16,9 @@ class wandering extends Component{
 			hasMore:true,
 			pageNum:2
 		};
+	}
+	componentWillMount(){
+		this.props.whatFootBarColor();
 	}
 	componentDidMount(){
 		// scrollHeight = window.innerHeight - this.header.clientHeight;
@@ -90,5 +94,12 @@ class wandering extends Component{
 
 
 
-export default wandering
+export default connect(null,{
+	whatFootBarColor(){
+		return {
+			type: 'footBarColor',
+			payload: 'wandering'
+		}
+	}
+})(wandering)
 
