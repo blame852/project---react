@@ -5,7 +5,7 @@ import css from "./index.module.scss"
 import { connect } from 'react-redux';
 class Footer extends Component{
     constructor(props){
-          super(props)
+          super(props);
 
     }
 

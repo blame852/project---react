@@ -14,12 +14,14 @@ class home extends Component{
 	constructor(props) {
 		super(props);
 		this.state = {
-			
+			Gender : null,
+			Style: null,
+			Size: null
 		}
 	}
 
 	render(){
-		return <div>
+		return <div style={{'backgroundColor':'#fff'}}>
 		{this.props.list.data?
 		<div>
 			<div className={css.header}>
@@ -31,7 +33,7 @@ class home extends Component{
 					<Carousel
 						autoplay={true}
 						dots
-						autoplayInterval={500}
+						autoplayInterval={2000}
 						infinite
 					>
 						{this.props.list.data.InnerData.Headers.map((val,index) => (
@@ -61,14 +63,14 @@ class home extends Component{
 			<div className={css.titleMs}>
 				<div>
 					{
-						this.props.list.data.InnerData.GroupAttrs.props.map(items=>
-							<RadioGroup key={items.pid} buttonStyle='solid' onChange={this.onChange.bind(this)} defaultValue={items[0]}>
+						this.props.list.data.InnerData.GroupAttrs.props.map((items, index)=>
+							<RadioGroup key={items.pid} onChange={this.onChange.bind(this)}>
 							<p style={{
 								'fontSize':'14px',
 								'color':'#444'
 							}}>{items.pname}</p>
-							{items.vals.map(i=>
-								<RadioButton key={i.vid} value={i.vname}>{i.vname}</RadioButton>
+							{items.vals.map((i,j)=>
+								<RadioButton key={i.vid} moor={index} value={i.vname} checked={ j === 0 ? true : false }>{i.vname}</RadioButton>
 							)}
 							</RadioGroup>
 						)
@@ -81,7 +83,33 @@ class home extends Component{
 	}
 
 	onChange(e) {
-  		console.log(`radio checked:${e.target.value}`);
+		// console.log(e.target);
+		this.jj(e.target.moor, e.target.value)
+		
+	}
+
+	jj(moor, value){
+		console.log(moor, value)
+		if(moor === 0){
+			this.setState({
+				Gender: value
+			})
+		}
+		if (moor === 1) {
+			this.setState({
+				Style: value
+			})
+		}
+		if (moor === 2) {
+			this.setState({
+				Size: value
+			})
+		}
+		return
+	}
+
+	componentDidUpdate(){
+		console.log(this.state);
 	}
 
 	componentDidMount(){
