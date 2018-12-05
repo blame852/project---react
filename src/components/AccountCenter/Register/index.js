@@ -4,8 +4,17 @@ import css from "./index.module.scss";
 import {NavLink} from "react-router-dom";
 import axios from "axios";
 import {connect} from 'react-redux'
+import {Toast} from 'antd-mobile'
 
 class Register extends Component{
+
+	constructor(p){
+		super(p);
+		this.state={
+			pw:false,
+			pe:false
+		}
+	}
 	render(){
 		return <div className={css.register}>
 			
@@ -17,10 +26,10 @@ class Register extends Component{
 						<h2>新用户注册</h2>
 						<ul>
 							<li>
-								<input type="text" placeholder="请输入手机号" ref="phone" />
+								<input type="text" placeholder="请输入手机号" ref="phone" onBlur={this.regPhone.bind(this)} />
 							</li>
 							<li>
-								<input type="password" placeholder="请设置6-20位密码,包含字母、数字或符号" ref="password" />
+								<input type="password" placeholder="请设置6-20位密码,包含字母、数字或符号" ref="password" onBlur={this.regPassword.bind(this)} />
 							</li>
 						</ul>
 						<input type="button" value="注册" className={css.btn1} onClick={this.handleRegister.bind(this)}/>
@@ -37,13 +46,52 @@ class Register extends Component{
 		this.props.footBarShow();
 	}
 
-	handleRegister(){
-		console.log('register')
-		console.log(this.refs.phone.value)
-		console.log(this.refs.password.value)
-		axios.post('/api/register',{}).then(res=>{
+	regPhone(){
+ 		var phoneReg = /^1[34578]\d{9}$/;
+ 		var result = phoneReg.test(this.refs.phone.value);
+ 		if(result) {
+ 			this.setState({
+ 				pe:true
+ 			})
+ 		} else {
+ 			this.setState({
+ 				pe:false
+ 			})
+ 			Toast.info('手机格式不正确',2)
+ 		}
+	}
 
-		})
+	regPassword(){
+		var pwReg = /^\w{6,20}$/;
+		var result = pwReg.test(this.refs.password.value);
+		if(result){
+			this.setState({
+				pw:true
+			})
+		} else {
+			this.setState({
+				pw:false
+			})
+			Toast.info('密码格式不正确',2);
+		}
+	}
+
+	handleRegister(){
+		if(this.state.pw && this.state.pe){
+			axios.post('/api/register',{
+				phone:this.refs.phone.value,
+				password:this.refs.password.value
+			}).then(res=>{
+					console.log(res.data.state)
+					if(res.data.state === 0){
+						Toast.fail('手机号码已注册', 2);
+					} else {
+						this.props.history.push('/login');
+					}
+			}).catch(()=>{
+				console.log('失败了')
+			})
+		}	
 	}
 	handleLog(){
 		console.log(this.props.history)
