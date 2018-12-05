@@ -19,7 +19,8 @@
 		position: relative;
 		padding-top:0.48rem;
 		padding-bottom:0.48rem;
-		overflow: hidden;
+		overflow: auto;
+		overflow-scrolling:touch;
 		li{
 			width:46%;
 			float:left;
