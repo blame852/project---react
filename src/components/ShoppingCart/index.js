@@ -1,9 +1,20 @@
-import React ,{ Component } from "react"
+import React ,{ Component } from "react";
+import { connect } from 'react-redux';
 class ShoppingCart extends Component{
 	render(){
 		return <div>
           ShoppingCart
 		</div>
 	}
+	componentWillMount(){
+		this.props.footBarColor();
+	}
 }
-export default ShoppingCart
+export default connect(null,{
+	footBarColor() {
+		return {
+			type: "footBarColor",
+			payload: "ShoppingCart"
+		}
+	}
+})(ShoppingCart)

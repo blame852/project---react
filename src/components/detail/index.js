@@ -15,21 +15,26 @@ class home extends Component{
 
 	render(){
 		return <div>
+		{this.props.list.data?
+		<div>
 			<div className={css.header}>
 				<a herf="#">返回</a>
 				<span>商品介绍</span>
 				<a herf="#">分享</a>
 			</div>
-			{this.props.list.data?
 				<WingBlank>
 					<Carousel
 						autoplay={true}
+						dots
+						autoplayInterval={500}
 						infinite
-						beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
-						afterChange={index => console.log('slide to', index)}
-						dots={true}
 					>
 						{this.props.list.data.InnerData.Headers.map((val,index) => (
+						<a
+						key={val}
+						href="javascript:;"
+						style={{ display: 'inline-block', width: '100%', height: this.state.imgHeight }}
+						>
 						<img	
 							src={val.ImageUrl}
 							alt=""
@@ -41,13 +46,16 @@ class home extends Component{
 							this.setState({ imgHeight: 'auto' });
 							}}
 						/>
+						</a>
 						))}
 					</Carousel>
 				</WingBlank>
-				:null
-			}
-				
+			<p className={css.titleName}>{this.props.list.data.InnerData.Name}</p>
+			<p className={css.titleMse}>{this.props.list.data.InnerData.Caption}</p>
+			<p className={css.pir}>￥{this.props.list.data.InnerData.SalePrice}</p>
 			
+		</div>
+		:null}
 		</div>
 	}
 
