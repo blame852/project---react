@@ -3,6 +3,7 @@ import './index.scss'
 import axios from 'axios'
 import Swiper from 'swiper'
 import 'swiper/dist/css/swiper.css'
+import {connect} from 'react-redux'
 
 class home extends Component{
 	constructor(props){
@@ -25,6 +26,9 @@ class home extends Component{
 				    },
 			    });
 			})
+		})
+		axios.get('/api/login').then(res=>{
+			this.props.changeLog(res.data);
 		})
 	}
 
@@ -60,4 +64,11 @@ class home extends Component{
 	}
 
 }
-export default home
+export default connect(null,{
+	changeLog(data){
+		return {
+			type:'changeLogin',
+			payload:data
+		}
+	}
+})(home)

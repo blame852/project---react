@@ -16,19 +16,20 @@ class home extends Component{
 	}
 	render(){
 		return <div id="home1">
-          	<div className="swiper-container">
+			<header><div className="image"></div><NavLink to="/allproducts" className="toAll"></NavLink></header>
+          	<div className="swiper-container home1Swiper">
           	    {this.state.dataList.length?
           	    	<div className="swiper-wrapper">
 		      	    	{this.state.dataList.map((item,idx)=>{
 		      	    		switch(item.Code){
 		      	    			case 'home':
-		      	    			return <div className="swiper-slide"><NavLink to="/home/home2" replace >{item.Name}</NavLink></div>
+		      	    			return <div className="swiper-slide home1Slide"><NavLink to="/home/home2" replace activeClassName='active'>{item.Name}</NavLink></div>
 		      	    			case 'newArrival':
-		      	    			return <div className="swiper-slide"><NavLink to="/home/newproducts" replace >{item.Name}</NavLink></div>
+		      	    			return <div className="swiper-slide home1Slide"><NavLink to="/home/newproducts" replace activeClassName='active'>{item.Name}</NavLink></div>
 		      	    			case 'mainCategory':
-		      	    			return <div className="swiper-slide"><NavLink to={`/home/channel/${item.ItemIndexId}`} replace >{item.Name}</NavLink></div>
+		      	    			return <div className="swiper-slide home1Slide"><NavLink to={`/home/channel/${item.ItemIndexId}`} replace activeClassName='active'>{item.Name}</NavLink></div>
 		      	    			case 'webpage':
-		      	    			return <div className="swiper-slide"></div>
+		      	    			return <div className="swiper-slide home1Slide"></div>
 		      	    			default:
 		      	    			return 
 		      	    		}
@@ -52,7 +53,7 @@ class home extends Component{
         			dataList:res.data.InnerData.IndexNav
         		},
         		()=>{
-        			var swiper = new Swiper('.swiper-container', {
+        			var swiper = new Swiper('.home1Swiper', {
         			    slidesPerView: 3,
         			    spaceBetween: 30,
         			    pagination: {
