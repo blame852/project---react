@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 const action = {
     footBarHidden() {
         return {
@@ -35,6 +36,7 @@ const action = {
                 }
             })
             console.log(this)
+            
             return {
                 type: 'dataListAxios',
                 payload: res
