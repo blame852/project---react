@@ -51,7 +51,7 @@ class wandering extends Component{
           	    {
           	    	this.state.datalist.map((item,index)=>
           	    		item.ImageUrl?
-          	    		<li key={index} onClick={this.handleClick.bind(this,index)}>
+          	    		<li key={index} onClick={this.handleClick.bind(this,item.ItemInfoID)}>
           	    			<img src={`http://i.lifevccdn.com/${item.ImageUrl}`}/>
           	    			<h4>{item.Name}</h4>
           	    			<span className={css.price}>￥
@@ -72,9 +72,9 @@ class wandering extends Component{
 
 	handleClick(id){
 		console.log(this.props);
-		{
-			// this.props.history.push(`/detail/`id)
-		}
+		
+			this.props.history.push(`/detail/${id}`)
+	
 	}
 
 	loadFunc(){
