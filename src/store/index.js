@@ -6,12 +6,14 @@ import detailList from './storeList/detailList';
 import deliverGoods from './storeList/deliverGoods'
 import footBarWhatColor from './storeList/footBarWhatColor'
 import channelsub from './storeList/channelsub'
+import changeLogin from './storeList/changeLogin'
 const Reducer = combineReducers({
     footBar,
     detailList,
     deliverGoods,
     footBarWhatColor,
-    channelsub
+    channelsub,
+    changeLogin
 })
 
 let cmposeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

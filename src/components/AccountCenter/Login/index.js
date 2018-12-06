@@ -44,11 +44,12 @@ class Login extends Component{
 			phone:this.refs.phone.value,
 			password:this.refs.password.value
 		}).then(res=>{
-			console.log(res.data.state)
+			console.log(res.data)
 			if(res.data.state === 0){
 				Toast.info('手机号不存在',2);
 			} else if(res.data.state === 2) {
 				Toast.success('登录成功',1)
+				this.props.changeLogin(res.data);
 				this.props.history.push('/accountcenter');
 			} else {
 				Toast.fail('手机号码或密码不正确',2)
@@ -69,6 +70,12 @@ export default connect(null,{
 		return{
 			type:'footBarShow',
 			payload:true
+		}
+	},
+	changeLogin(data){
+		return{
+			type:'changeLogin',
+			payload:data
 		}
 	}
 })(Login)
