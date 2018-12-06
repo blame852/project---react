@@ -8,6 +8,7 @@ import { Carousel, WingBlank } from 'antd-mobile';
 import { Radio } from 'antd';
 import 'swiper/dist/css/swiper.min.css'
 import Swiper from 'swiper/dist/js/swiper.js'
+import axios from 'axios'
 
 const RadioButton = Radio.Button;
 const RadioGroup = Radio.Group;
@@ -125,7 +126,7 @@ class home extends Component{
 
 	imgBan(id){
 		this.props.history.push(`/detail/${id}`);
-		window.location.reload(true);
+		
 	}
 
 	clij(){
@@ -212,6 +213,18 @@ class home extends Component{
 
 	componentWillUnmount() {
 		this.props.footBarShow();
+	}
+
+	componentWillReceiveProps(newprops){
+		if(newprops.match.params.id === this.props.match.params.id){
+			// console.log('成功')
+			// 通过比较新旧属性来判断是否需要重新渲染组件，
+			//但是数据存放在store中，在发ajax的时候会修改store的值，导致传过来的props改变，会无限触发这个钩子函数
+			//用if判断新旧属性的id值，进而跳出无限调用
+			return
+		}
+		this.props.dataListAxios.call(this);
+
 	}
 
 	GoBack(){

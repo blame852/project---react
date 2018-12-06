@@ -15,6 +15,7 @@ import NewProducts from "../components/home/NewProducts"
 import { Provider } from 'react-redux'
 import Store from '../store/index'
 import Channelsub from "../components/channelsub"
+import MsgSet from '../components/AccountCenter/MessageSet'
 const router = <Provider store = {Store}>
 <Router>
     <App>
@@ -36,7 +37,8 @@ const router = <Provider store = {Store}>
        <Route path="/allproducts" component={Allproducts}/>
        <Route path='/register' component={Register} />
        <Route path='/login' component={Login} />
-       <Route path="/channelsub/:id/:i" component={Channelsub}/>   
+       <Route path="/channelsub/:id/:i" component={Channelsub}/> 
+       <Route path="/set" component={MsgSet} />  
        <Redirect from="/" to="/home"/>   
        </Switch>
     </App>

@@ -13,6 +13,9 @@ class AccountCenter extends Component{
 	}
 	componentWillMount(){
 		this.props.whatFootBarColor();
+		axios.get('/api/login').then(res=>{
+			this.props.changeLogin(res.data);
+		})
 	}
 
 	componentDidMount(){
@@ -28,7 +31,7 @@ class AccountCenter extends Component{
 	}
 
 	handleClick(){
-		console.log(document.cookie)
+		this.props.history.push('/set');
 	}
 
 	render(){
@@ -38,14 +41,14 @@ class AccountCenter extends Component{
 			</h2>
 			<div className={css.topLogin}>
 				{
-					this.props.isLog?
+					this.props.isLog.user?
 					<div className={css.user}>
 						<label>
 							<img src="./userPhone.png" alt=""/>
 							<input type="file"/>
 						</label>
 						<div className={css.msg}>
-							<p>1381111111</p>
+							<p>{this.props.isLog.user}</p>
 							<p>
 								<span>新新会员</span>
 								<img src="./rankstar.png" alt=""/>
@@ -139,6 +142,12 @@ export default connect(
 			return{
 				type:'footBarColor',
 				payload:'accountcenter'
+			}
+		},
+		changeLogin(data){
+			return{
+				type:'changeLogin',
+				payload:data
 			}
 		}
 	})(AccountCenter

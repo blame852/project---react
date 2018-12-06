@@ -1,0 +1,65 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+.set{
+	header{
+		width:100%;
+		height:0.48rem;
+		background:#89be48;
+		position:relative;
+		h1{
+			margin:0;
+			color:white;
+			font-size:0.2rem;
+			position:absolute;
+			left:50%;
+			top:50%;
+			transform:translate(-50%,-50%);
+		}
+		span{
+			color:white;
+			font-size:0.3rem;
+			position:absolute;
+			left:0.02rem;
+			top:0;
+		}
+	}
+	.main{
+		ul{
+			li{
+				background:white;
+				height:0.6rem;
+				width:100%;
+				margin-bottom:0.15rem;
+				color:#2e2e2e;
+				position:relative;
+				p{
+					line-height:0.6rem;
+					margin-left:0.2rem;
+				}
+				span{
+					position:absolute;
+					right:0.02rem;
+					top:0;
+					font-size:0.25rem;
+					color:#2e2e2e;
+					line-height:0.6rem;
+				}
+			}
+		}
+		button{
+			width:88%;
+			height:0.48rem;
+			background:#ee7621;
+			outline:none;
+			border:none;
+			border-radius:0.05rem;
+			color:white;
+			font-size:0.2rem;
+			margin-left:6%;
+			margin-top:0.2rem;
+		}
+	}
+}
