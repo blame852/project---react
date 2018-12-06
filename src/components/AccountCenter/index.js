@@ -26,21 +26,43 @@ class AccountCenter extends Component{
 			})
 		})
 	}
-	// http://app.lifevc.com/1.0/v_h5_5.1.2_33/contents/usercenter?si=&o=http%3A%2F%2Fm.lifevc.com&NewCartVersion=true
+
+	handleClick(){
+		console.log(document.cookie)
+	}
+
 	render(){
 		return <div className={css.AccountCenter}>
 			<h2>账户中心
-				<span className={css.setting}>设置</span>
+				<span className={css.setting} onClick={this.handleClick.bind(this)}>设置</span>
 			</h2>
 			<div className={css.topLogin}>
-				<div className={css.acctLogin}>
-					<span className={css.noLogin}>您还未登录</span>
-					<div className={css.button}>
-						<NavLink to="/login" className={css.login}>登录</NavLink>
-						<span className={css.line}>|</span>	
-						<NavLink to="/register" className={css.register}>注册</NavLink>
+				{
+					this.props.isLog?
+					<div className={css.user}>
+						<label>
+							<img src="./userPhone.png" alt=""/>
+							<input type="file"/>
+						</label>
+						<div className={css.msg}>
+							<p>1381111111</p>
+							<p>
+								<span>新新会员</span>
+								<img src="./rankstar.png" alt=""/>
+							</p>
+						</div>
 					</div>
-				</div>
+					:
+					<div className={css.acctLogin}>
+						<span className={css.noLogin}>您还未登录</span>
+						<div className={css.button}>
+							<NavLink to="/login" className={css.login}>登录</NavLink>
+							<span className={css.line}>|</span>	
+							<NavLink to="/register" className={css.register}>注册</NavLink>
+						</div>
+					</div> 
+					
+				}
 			</div>
 			<div className={css.dashOrder}>
 				<ul className={css.topDash}>
@@ -106,7 +128,12 @@ class AccountCenter extends Component{
 		</div>
 	}
 }
-export default connect(null,
+export default connect(
+	(state)=>{
+		return{
+			isLog:state.changeLogin
+		}
+	},
 	{
 		whatFootBarColor(){
 			return{

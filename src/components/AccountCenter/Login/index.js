@@ -4,6 +4,7 @@ import "./index.module.scss";
 import {NavLink} from "react-router-dom";
 import axios from "axios";
 import {connect} from 'react-redux';
+import {Toast} from 'antd-mobile'
 
 class Login extends Component{
 	render(){
@@ -18,13 +19,13 @@ class Login extends Component{
 				<div className={css.word}>
 					<h1>老用户登录</h1>
 					<div className={css.formLog}>
-						<input type="tel" placeholder="请输入手机号" required className={css.write}/>
-						<input type="password" placeholder="请输入登录密码" required className={css.write}/>
+						<input type="tel" placeholder="请输入手机号" required className={css.write} ref="phone" />
+						<input type="password" placeholder="请输入登录密码" required className={css.write} ref="password" />
 						<NavLink to="/login" className={css.forget}>忘记密码</NavLink>
 					</div>
 					<div className={css.button}>
-						<NavLink to="/home" className={css.butLogin}>登录</NavLink>
-						<NavLink to="/home" className={css.butRegister}>注册</NavLink>
+						<button className={css.butLogin} onClick={this.handleClick.bind(this)} >登录</button>
+						<NavLink to="/register" className={css.butRegister}>注册</NavLink>
 					</div>
 				</div>
 			</div>
@@ -35,6 +36,25 @@ class Login extends Component{
 	}
 		componentWillUnmount(){
 			this.props.footBarShow();
+	}
+
+	handleClick(){
+		console.log('login');
+		axios.post('/api/login',{
+			phone:this.refs.phone.value,
+			password:this.refs.password.value
+		}).then(res=>{
+			console.log(res.data)
+			if(res.data.state === 0){
+				Toast.info('手机号不存在',2);
+			} else if(res.data.state === 2) {
+				Toast.success('登录成功',1)
+				this.props.changeLogin(res.data);
+				this.props.history.push('/accountcenter');
+			} else {
+				Toast.fail('手机号码或密码不正确',2)
+			}
+		})
 	}
 }
 
@@ -50,6 +70,12 @@ export default connect(null,{
 		return{
 			type:'footBarShow',
 			payload:true
+		}
+	},
+	changeLogin(data){
+		return{
+			type:'changeLogin',
+			payload:data
 		}
 	}
 })(Login)

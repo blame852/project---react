@@ -15,7 +15,7 @@
 			display: inline-block;
 			border-radius: 50%;
 			position: absolute;
-			left:0.36rem;
+			left:0.18rem;
 			top:0.46rem;
 			border:0.01rem solid #3aad36;
 			color:#3aad36;
@@ -95,7 +95,7 @@
 					width:80%;
 					display: block;
 					text-align:center;
-					font-size:0.2rem;
+					font-size:0.18rem;
 					height:0.36rem;
 					line-height:0.36rem;
 					margin:0 auto 0.2rem;
@@ -104,12 +104,14 @@
 					background:#3aad36;
 					border:0.01rem solid #3aad36;
 					color:#fff;
+					letter-spacing: 0.2rem;
+					text-indent:0.2rem;
 				}
 				.butRegister{
 					width:80%;
 					display: block;
 					text-align:center;
-					font-size:0.2rem;
+					font-size:0.18rem;
 					height:0.36rem;
 					line-height:0.36rem;
 					margin:0 auto 0.2rem;
@@ -118,6 +120,8 @@
 					background:#8a8a8a;
 					border:0.01rem solid #8a8a8a;
 					color:#fff;
+					letter-spacing: 0.2rem;
+					text-indent:0.2rem;
 				}
 			}
 		}
