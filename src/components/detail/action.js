@@ -14,7 +14,7 @@ const action = {
         }
     },
     dataListAxios(){
-        console.log(this.props.match.params.id)
+        // console.log(this.props.match.params.id)
         return axios({
             url: `/1.0/v_h5_5.1.2_33/items/itemview?Iteminfoid=${this.props.match.params.id}&o=http%3A%2F%2Fm.lifevc.com&NewCartVersion=true`
         }).then((res)=>{
